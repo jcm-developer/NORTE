@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NORTE</title>
+    <link rel="icon" href="assets/img/icon.ico" type="image/png" sizes="16x16" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="/"><img src="assets/img/logo.png" alt="logo"></a>
+        <nav>
+            <a href="/cart.html" class="cart-wrapper">
+                <i id="cart-icon" class="ri-shopping-cart-2-line cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- <section id="product-detail"></section> -->
+    <section id="product-detail" class="product-detail-section">
+        <div class="product-detail-container">
+            <img src="" alt="" id="product-image" />
+            <div class="product-info">
+                <h2 id="product-name"></h2>
+                <p id="product-description"></p>
+                <p class="price" id="product-price"></p>
+                <button class="button-primary">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/img/logo.png" alt="logo">
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/shopping-cart">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NORTE Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/product.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const totalQty = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+                const countElement = document.getElementById("cart-count");
+                if (countElement) countElement.textContent = totalQty;
+            }
+
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>
