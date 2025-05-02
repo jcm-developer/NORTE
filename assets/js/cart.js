@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${product.image}" alt="${product.name}">
                     <div class="cart-item-details">
                         <h3>${product.name}</h3>
-                        <p>$${finalPrice}</p>
+                        <p>${finalPrice}€</p>
                         <p>Quantity: ${cartItem.qty || 1}</p>
                     </div>
                     <button class="remove-vertical-btn" data-id="${product.id}">Remove</button>
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 total += parseFloat(finalPrice) * (cartItem.qty || 1);
             });
 
-            cartTotalElement.textContent = `$${total.toFixed(2)}`;
+            cartTotalElement.textContent = `${total.toFixed(2)}€`;
         });
 
     document.addEventListener('click', e => {

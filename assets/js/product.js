@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p id="product-description">${product.description}</p>
                         <p class="price" id="product-price">
                             ${hasDiscount
-                    ? `<span class='old-price'>$${product.price.toFixed(2)}</span> <span class='new-price'>$${finalPrice}</span>`
-                    : `<span class='new-price'>$${finalPrice}</span>`
+                    ? `<span class='old-price'>${product.price.toFixed(2)}€</span> <span class='new-price'>${finalPrice}€</span>`
+                    : `<span class='new-price'>${finalPrice}€</span>`
                 }
                         </p>
                         <label for="quantity">Quantity:</label>
